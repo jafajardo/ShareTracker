@@ -1,0 +1,1 @@
+module.exports = 'mongodb://share-list:Password123@ds029797.mlab.com:29797/share-list';

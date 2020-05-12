@@ -1,0 +1,55 @@
+
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 300;
+  line-height: 32px;
+}
+
+.h1, .h2, .h3, .h4, .h5 {
+  margin-bottom: 1rem;
+}
+
+canvas {
+  margin-bottom: 100px;
+}
+
+a {
+  color: #212529;
+}
+
+a:hover {
+  color: #f2849e;
+  text-decoration: none;
+}
+
+tr th {
+  color: #f2849e;
+}
+
+.remove-btn {
+  margin-right: 0.5rem;
+}
+
+.chart-wrapper {
+  height: 470px;
+  margin-bottom: 100px;
+}
+
+.fade-enter {
+  opacity: 0.01;
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 1000ms ease-in;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-exit-active {
+  opacity: 0.01;
+  transition: opacity 1000ms ease-in;
+}
