@@ -9,12 +9,13 @@ import {
   REGISTER_SUCCESS,
   REGISTER_FAIL
 } from "./types";
+import { ENDPOINT, PORT } from "./backend";
 
 export const loadUser = () => (dispatch, getState) => {
   dispatch({ type: USER_LOADING });
 
   axios
-    .get("/api/auth/user", tokenConfig(getState))
+    .get(`http://${ENDPOINT}:${PORT}/api/auth/user`, tokenConfig(getState))
     .then(res => {
       dispatch({
         type: USER_LOADED,
@@ -31,7 +32,7 @@ export const register = ({ name, email, password }) => (dispatch, getState) => {
 
   axios
     .post(
-      "/api/auth/register",
+      `http://${ENDPOINT}:${PORT}/api/auth/register`,
       { name, email, password },
       tokenConfig(getState)
     )
@@ -47,9 +48,10 @@ export const register = ({ name, email, password }) => (dispatch, getState) => {
 };
 
 export const login = ({ email, password }) => (dispatch, getState) => {
+
   //TODO: error actions
   axios
-    .post("/api/auth/login", { email, password }, tokenConfig(getState))
+    .post(`http://${ENDPOINT}:${PORT}/api/auth/login`, { email, password }, tokenConfig(getState))
     .then(res => {
       dispatch({
         type: LOGIN_SUCCESS,

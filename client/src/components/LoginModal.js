@@ -39,8 +39,8 @@ class LoginModal extends Component {
     e.preventDefault();
 
     this.props.login({
-      email: this.state.email,
-      password: this.state.password
+      "email": this.state.email,
+      "password": this.state.password
     });
   };
 

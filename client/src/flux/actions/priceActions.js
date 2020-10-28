@@ -1,10 +1,11 @@
 import axios from "axios";
 import { GET_PRICE, GET_PRICES_FOR_CHART } from "../actions/types";
 import { tokenConfig } from "./authActions";
+import { ENDPOINT, PORT } from "./backend";
 
 export const getPrice = symbol => (dispatch, getState) => {
   axios
-    .get(`/api/prices/${symbol}`, tokenConfig(getState))
+    .get(`http://${ENDPOINT}:${PORT}/api/prices/${symbol}`, tokenConfig(getState))
     .then(res => {
       dispatch({
         type: GET_PRICE,
@@ -19,7 +20,7 @@ export const getPrice = symbol => (dispatch, getState) => {
 
 export const getPricesForChart = (symbol, days) => (dispatch, getState) => {
   axios
-    .get(`/api/prices/${symbol}/${days}`, tokenConfig(getState))
+    .get(`http://${ENDPOINT}:${PORT}/api/prices/${symbol}/${days}`, tokenConfig(getState))
     .then(res => {
       dispatch({
         type: GET_PRICES_FOR_CHART,

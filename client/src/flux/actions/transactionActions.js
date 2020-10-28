@@ -6,8 +6,9 @@ import {
 } from "./types";
 import axios from "axios";
 import { tokenConfig } from "./authActions";
+import { ENDPOINT, PORT } from "./backend";
 
-const URL = "api/transactions";
+const URL = `http://${ENDPOINT}:${PORT}/api/transactions`;
 
 export const getTransactions = () => (dispatch, getState) => {
   toggleLoading();
